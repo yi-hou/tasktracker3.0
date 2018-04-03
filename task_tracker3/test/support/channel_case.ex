@@ -26,7 +26,11 @@ defmodule TaskTracker3Web.ChannelCase do
   end
 
 
-  setup _tags do
+  setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TaskTracker3.Repo)
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(TaskTracker3.Repo, {:shared, self()})
+    end
     :ok
   end
 

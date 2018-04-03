@@ -5,10 +5,14 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :task_tracker3,
+  ecto_repos: [TaskTracker3.Repo]
+
 # Configures the endpoint
 config :task_tracker3, TaskTracker3Web.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "gOc9JA/Pq9bjSAHvLnWh3huta09bcWCDrMZLcOd6ucOZsnxc0ASbum9I6ztCnUqE",
+  secret_key_base: "vc8wrx0o4HpgmYLnFg3MsD6avdgf8ICex1AGPV0PgKN0heq/fLJtZGzHbZbF88Ta",
   render_errors: [view: TaskTracker3Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: TaskTracker3.PubSub,
            adapter: Phoenix.PubSub.PG2]

@@ -8,6 +8,8 @@ defmodule TaskTracker3.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      # Start the Ecto repository
+      supervisor(TaskTracker3.Repo, []),
       # Start the endpoint when the application starts
       supervisor(TaskTracker3Web.Endpoint, []),
       # Start your own worker by calling: TaskTracker3.Worker.start_link(arg1, arg2, arg3)

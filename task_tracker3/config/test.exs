@@ -8,3 +8,12 @@ config :task_tracker3, TaskTracker3Web.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configure your database
+config :task_tracker3, TaskTracker3.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "task_tracker3_test",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox
