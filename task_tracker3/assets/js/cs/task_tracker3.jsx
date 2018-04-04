@@ -9,7 +9,7 @@ import Users from './users';
 import TaskForm from './task-form';
 
 export default function task_tracker3_init(store) {
-  ReactDOM.render(<TaskTracker3 />, root);
+  ReactDOM.render(
     <Provider store={store}>
       <TaskTracker3 state={store.getState()} />
     </Provider>,

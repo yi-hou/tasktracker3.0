@@ -28,6 +28,7 @@ defmodule TaskTracker3Web.Router do
 
      resources "/users", UserController, except: [:new, :edit]
      resources "/tasks", TaskController, except: [:new, :edit]
-
+     post "/token", TokenController, :create
+     delete "/token", TokenController, :delete
    end
 end

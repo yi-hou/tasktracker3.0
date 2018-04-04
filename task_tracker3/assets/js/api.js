@@ -34,7 +34,7 @@ class TheServer {
       method: "post",
       dataType: "json",
       contentType: "application/json; charset=UTF-8",
-      data: JSON.stringify({ token: data.token, task: data }),
+      data: JSON.stringify({token: data.token, task: data}),
       success: (resp) => {
         store.dispatch({
           type: 'ADD_TASK',
@@ -58,6 +58,21 @@ class TheServer {
       },
     });
   }
+
+  submit_logout() {
+    $.ajax("/api/v1/token", {
+      method: "delete",
+      dataType: "json",
+      contentType: "application/json; charset=UTF-8",
+      success: (resp) => {
+        store.dispatch({
+          type: 'SET_TOKEN',
+          token: null,
+        });
+      },
+    });
+  }
 }
+
 
 export default new TheServer();

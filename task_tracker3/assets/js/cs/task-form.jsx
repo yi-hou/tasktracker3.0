@@ -9,7 +9,7 @@ function TaskForm(props) {
     let data = {};
     data[tgt.attr('name')] = tgt.val();
     let action = {
-      type: 'UPDATE_FORM,
+      type: 'UPDATE_FORM',
       data: data,
     };
     props.dispatch(action);
@@ -40,7 +40,7 @@ function TaskForm(props) {
    </FormGroup>
    <FormGroup>
      <Label for="description">Description</Label>
-     <Input type="textarea" name="description" value={props.form.description} onChange{update} />
+     <Input type="textarea" name="description" value={props.form.description} onChange={update} />
    </FormGroup>
    <FormGroup>
      <Label for="time">Time(incremented by 15 minutes)</Label>
